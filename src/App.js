@@ -1,25 +1,45 @@
-import logo from './logo.svg';
+// import logo from './logo.svg';
+import {createBrowserRouter, createRoutesFromElements, Route, RouterProvider} from 'react-router-dom';
 import './App.css';
+import Rootlayouts from './layouts/rootlayouts';
+import Home from './screens/home'
+import About from './screens/about'
+// import Contact from './screens/contact';
+import Contactlayout from './layouts/contactlayout';
+import Mailus from './screens/mail';
+import Phone from './screens/phone';
+import Pagenotfound from './screens/pagenotfound';
+import Careerslayout from './layouts/careerslayout';
+import Careers from './screens/careers';
+
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+	const router = createBrowserRouter(createRoutesFromElements (
+		<Route path='/'
+			element={<Rootlayouts/>}>
+			<Route index
+				element={<Home/>}/>
+			<Route path='about'
+				element={<About/>}/>
+			<Route path='contactus'
+				element={<Contactlayout/>}>
+				<Route path='mail'
+					element={<Mailus/>}/>
+				<Route path='phone'
+					element={<Phone/>}/>
+			</Route>
+      <Route path='careers' element={<Careerslayout/>}>
+       <Route index
+				element={<Careers/>}/>
+        </Route>
+      <Route path='*' element={<Pagenotfound/>}/>
+		</Route>
+	))
+	return (
+		<RouterProvider router={router}/>
+
+	);
 }
 
 export default App;
