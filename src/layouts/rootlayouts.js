@@ -1,15 +1,21 @@
-import { Container } from '@mui/system'
+import { Container } from '@mui/material'
 import React from 'react'
 import { Outlet } from 'react-router-dom'
-import Navbar from '../components/navbar'
+import Navbar from '../components/Navbar'
+import AppBreadcrumbs from './../components/AppBreadCrumbs';
 
-export default function Rootlayouts() {
+const Rootlayout = () => {
   return (
-    <div>
+    <>
         <Navbar/>
-        <Container sx={{p:5}}>
-        <Outlet/>
+        <Container sx={{p:3}}>
+            <AppBreadcrumbs/>
         </Container>
-    </div>
+        <Container sx={{p:5}}>
+            <Outlet/>
+        </Container>
+    </>
   )
 }
+
+export default Rootlayout

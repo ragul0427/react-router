@@ -1,15 +1,14 @@
+import { Typography } from '@mui/material'
 import React from 'react'
 import { Link } from 'react-router-dom'
 
-export default function pagenotfound()
- {
+const PageNotFound = () => {
   return (
-    <div>
-        <h1>Page Not Found</h1>
-        <p>Go to </p>
-        <Link to='/'>
-            Home page
-        </Link>
-    </div>
+    <>
+        <Typography variant='h4'>Page Not Found</Typography>
+        <Typography variant='body1' color='gray'>Go to <Link to='/'>Home Page</Link></Typography>
+    </>
   )
 }
+
+export default PageNotFound

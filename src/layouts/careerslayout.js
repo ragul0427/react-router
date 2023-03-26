@@ -1,14 +1,18 @@
-import { Container } from "@mui/system";
-import React from "react";
-import { Outlet } from "react-router-dom";
+import { Typography } from '@mui/material'
+import React from 'react'
+import { Outlet } from 'react-router-dom'
+import Careers from '../screens/Careers'
+import { Container } from '@mui/material';
 
-export default function Careerslayout() {
+const CareersLayout = () => {
   return (
-    <div>
-      <h1>we create learning and developing,always studies....</h1>
-      <Container sx={{ p: 5 }}>
-        <Outlet />
-      </Container>
-    </div>
-  );
+    <>
+        <Typography variant='body1'>We are continuously learning and developing, always looking to improve the standards of what we provide. Join us.</Typography>
+        <Container sx={{p:5}}>
+          <Outlet/>
+        </Container>
+    </>
+  )
 }
+
+export default CareersLayout

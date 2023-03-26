@@ -1,9 +1,13 @@
+import { Typography } from '@mui/material'
 import React from 'react'
 
-export default function Mailus() {
+const Mail = () => {
   return (
     <>
-      <h1>ragulhp2704@gmail.com</h1>
+        <Typography variant='h4'>Mail:</Typography>
+        <Typography variant='body1' color='gray'>Please mail to test@gmail.com</Typography>
     </>
   )
 }
+
+export default Mail
